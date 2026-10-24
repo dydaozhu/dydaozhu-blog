@@ -1,0 +1,87 @@
+# ==========================================================
+# Hexo 站点配置
+# 文档：https://hexo.io/docs/configuration
+# 主题的配置在 _config.butterfly.yml，不要写在这里
+# ==========================================================
+
+# ---------- 站点信息（这几项请改成你自己的） ----------
+title: 我的博客
+subtitle: ''
+description: 记录折腾与思考
+keywords:
+author: 你的名字
+language: zh-CN
+timezone: Asia/Shanghai
+
+# ---------- URL ----------
+# 必须写成最终对外访问的地址，否则 RSS、sitemap 里的链接会错
+url: https://blog.mcfwq.top
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
+
+# ---------- 目录 ----------
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+
+# 后台页 /admin 是纯静态 HTML，原样复制，不做渲染
+skip_render:
+  - 'admin/**'
+
+# ---------- 写作 ----------
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+
+# 代码高亮交给 Butterfly 主题处理。
+# 这里必须关掉 Hexo 自带的两套高亮，否则代码块会被处理两次（出现重复的 <pre>）。
+highlight:
+  enable: false
+prismjs:
+  enable: false
+
+# ---------- 首页分页 ----------
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# ---------- 分类 / 标签 ----------
+default_category: 未分类
+category_map:
+tag_map:
+
+# ---------- 时间格式 ----------
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+# 用 git 工作流时，文件修改时间没有意义（CI 里每次都是新 checkout），
+# 所以让 updated 等于 date，避免出现"每篇文章都在今天更新过"
+updated_option: 'date'
+
+# ---------- 分页 ----------
+per_page: 10
+pagination_dir: page
+
+# ---------- 主题 ----------
+theme: butterfly
+
+# ---------- 部署 ----------
+# 本博客由 Cloudflare Pages 自动构建，不需要 hexo deploy
+deploy:
+  type: ''

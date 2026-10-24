@@ -1,0 +1,37 @@
+/* ==========================================================
+   自定义样式：只做"加法"，不改主题结构
+   覆盖 Butterfly 默认样式时优先用更具体的选择器
+   ========================================================== */
+
+/* 中文字体优先，避免 Windows 上落到宋体 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 中文段落行高放宽，长文更好读 */
+#article-container p {
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+#article-container h2 {
+  margin-top: 2.2rem;
+}
+
+#article-container img {
+  border-radius: 8px;
+}
+
+/* 表格在窄屏下可以横向滚动，不撑破布局 */
+#article-container table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#article-container table td,
+#article-container table th {
+  white-space: normal;
+}

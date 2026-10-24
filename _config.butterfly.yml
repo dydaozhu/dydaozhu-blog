@@ -1,0 +1,191 @@
+# ==========================================================
+# Butterfly 主题自定义配置
+#
+# 只需要写"想改的项"，其余全部沿用主题默认值
+# （Hexo 会把本文件与 themes/butterfly/_config.yml 深度合并）。
+# 全部可配项见：https://butterfly.js.org/
+# ==========================================================
+
+# ---------- 导航栏 ----------
+nav:
+  display_title: true
+  display_post_title: true
+
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  关于: /about/ || fas fa-user
+
+# 想加社交链接就取消注释，把地址换成你自己的
+# social:
+#   fab fa-github: https://github.com/你的用户名 || GitHub || '#24292e'
+#   fas fa-envelope: mailto:you@example.com || Email || '#4a7dbe'
+#   fas fa-rss: /atom.xml || RSS || '#ff6f00'
+
+# ---------- 图片 ----------
+favicon: /img/favicon.png
+
+avatar:
+  img: /img/avatar.png
+  effect: true
+
+# 首页 / 归档 / 标签 / 分类页顶部大图；文章没设 top_img 时也用它
+default_top_img: /img/banner.jpg
+index_img: /img/banner.jpg
+archive_img: /img/banner.jpg
+tag_img: /img/banner.jpg
+category_img: /img/banner.jpg
+
+# 列表里不显示封面图，纯文字卡片更干净
+cover:
+  index_enable: false
+  aside_enable: false
+  archives_enable: false
+
+index_top_img_height: 520px
+
+# ---------- 首页副标题 ----------
+subtitle:
+  enable: true
+  effect: true
+  sub:
+    - 记录折腾与思考
+    - 也记录踩过的坑
+
+index_layout: 3
+index_post_content:
+  method: 3
+  length: 240
+
+# ---------- 文章元信息 ----------
+post_meta:
+  page:
+    date_type: created
+    date_format: date
+    categories: true
+    tags: false
+    label: true
+  post:
+    position: left
+    date_type: created
+    date_format: date
+    categories: true
+    tags: true
+    label: true
+
+# ---------- 目录 ----------
+toc:
+  post: true
+  number: true
+  expand: false
+  scroll_percent: true
+
+# ---------- 版权 ----------
+post_copyright:
+  enable: true
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+related_post:
+  enable: true
+  limit: 6
+
+post_pagination: 1
+
+# ---------- 页脚 ----------
+footer:
+  owner:
+    enable: true
+    since: 2026
+  copyright:
+    enable: true
+    version: true
+
+# ---------- 侧边栏 ----------
+aside:
+  enable: true
+  card_author:
+    enable: true
+    description: 记录折腾与思考
+    button:
+      enable: false
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的博客，随便看看。
+  card_recent_post:
+    enable: true
+    limit: 5
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+  card_tags:
+    enable: true
+    limit: 40
+    color: false
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: -1
+    limit: 8
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+
+# ---------- 深色模式 ----------
+darkmode:
+  enable: true
+  button: true
+  # 1 = 跟随系统
+  autoChangeMode: 1
+
+readmode: true
+rightside_scroll_percent: true
+
+# ---------- 搜索（依赖 hexo-generator-searchdb） ----------
+search:
+  use: local_search
+  placeholder: 搜索文章…
+  local_search:
+    preload: false
+    top_n_per_article: 1
+    unescape: false
+
+# ---------- 分享 ----------
+share:
+  use: sharejs
+  sharejs:
+    sites: wechat,weibo,qq,x
+
+# ---------- 评论 ----------
+# 第一版不启用。以后想开评论，把 use 改成 Giscus 或 Twikoo，
+# 再填对应的配置段即可，例如：
+#   use: Giscus
+#   giscus:
+#     repo: 用户名/仓库名
+#     repo_id: xxx
+#     category_id: xxx
+comments:
+  use:
+
+# ---------- 访问量（不蒜子，第三方免费计数） ----------
+# 不想用就把三个 false 掉
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# ---------- 代码块 ----------
+code_blocks:
+  theme: light
+  copy: true
+  language: true
+
+# ---------- 自定义样式 ----------
+inject:
+  head:
+    - '<link rel="stylesheet" href="/css/custom.css">'
