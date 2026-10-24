@@ -1,0 +1,65 @@
+media:
+  - name: images
+    label: 图片
+    input: source/images
+    output: /images
+    categories: [image]
+    rename: random
+
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: source/_posts
+    format: yaml-frontmatter
+    filename: '{primary}.md'
+    view:
+      primary: title
+      sort: date
+      order: desc
+      fields: [title, date, categories, tags]
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: date
+        label: 发布时间
+        type: date
+        required: true
+        options:
+          time: true
+          format: 'yyyy-MM-dd HH:mm:ss'
+      - name: categories
+        label: 分类（可多个）
+        type: string
+        list: true
+      - name: tags
+        label: 标签（可多个）
+        type: string
+        list: true
+      - name: description
+        label: 摘要（可选，影响首页与分享卡片）
+        type: text
+      - name: body
+        label: 正文
+        type: rich-text
+        options:
+          format: markdown
+          media: images
+          switcher: true
+
+  - name: about
+    label: 关于页面
+    type: file
+    path: source/about/index.md
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 正文
+        type: rich-text
+        options:
+          format: markdown
+          media: images
