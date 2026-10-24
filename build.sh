@@ -6,7 +6,7 @@
 # 一次只能 100 个。所以主题不进仓库，改为在构建时自动拉取。
 #
 # Cloudflare 的构建命令填：bash build.sh
-# 本地如果想预览，装好 Node 之后也能直接跑：bash build.sh
+# 本地如果想预览，装好 Node + Git 之后也能直接跑：bash build.sh
 # ==========================================================
 
 set -euo pipefail
@@ -29,6 +29,15 @@ npm install --no-audit --no-fund
 
 echo "==> 生成静态文件"
 npm run build
+
+# hexo 生成失败时不一定会让 npm run 返回非 0，
+# 所以直接检查产物，避免"日志写着完成、其实没生成"。
+if [ ! -d public ]; then
+  echo "" >&2
+  echo "ERROR: 没有生成 public/ 目录，hexo generate 实际失败了。" >&2
+  echo "       往上翻日志看 hexo 的输出。" >&2
+  exit 1
+fi
 
 echo "==> 构建完成"
 echo "    public/ 下共 $(find public -type f | wc -l) 个文件"

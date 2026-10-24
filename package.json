@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "blog.mcfwq.top — Hexo + Butterfly，部署在 Cloudflare Pages",
+  "hexo": {
+    "version": ""
+  },
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
