@@ -18,17 +18,17 @@ menu:
   分类: /categories/ || fas fa-folder-open
   关于: /about/ || fas fa-user
 
-# 想加社交链接就取消注释，把地址换成你自己的
-# social:
-#   fab fa-github: https://github.com/你的用户名 || GitHub || '#24292e'
-#   fas fa-envelope: mailto:you@example.com || Email || '#4a7dbe'
-#   fas fa-rss: /atom.xml || RSS || '#ff6f00'
+# 社交链接：图标 || 链接 || 名称 || 颜色
+social:
+  fab fa-github: https://github.com/dydaozhu/ || GitHub || '#24292e'
+  fas fa-cube: https://modrinth.com/user/dydaozhu || Modrinth || '#1bd96a'
+  fas fa-rss: /atom.xml || RSS || '#ff6f00'
 
 # ---------- 图片 ----------
 favicon: /img/favicon.png
 
 avatar:
-  img: /img/avatar.png
+  img: /img/avatar.jpg
   effect: true
 
 # 首页 / 归档 / 标签 / 分类页顶部大图；文章没设 top_img 时也用它
@@ -108,9 +108,12 @@ aside:
   enable: true
   card_author:
     enable: true
-    description: 记录折腾与思考
+    description: Minecraft 服务器 DSMP 的服主
     button:
-      enable: false
+      enable: true
+      icon: fab fa-github
+      text: GitHub
+      link: https://github.com/dydaozhu/
   card_announcement:
     enable: true
     content: 欢迎来到我的博客，随便看看。
